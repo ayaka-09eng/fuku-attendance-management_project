@@ -94,8 +94,9 @@ MySQL：8.0.26
 Ngnix：1.21.1  
 
 ## URL
-
-
+会員登録：http://localhost/register
+ユーザーログイン：http://localhost/login
+管理者ログイン：http://localhost/admin/login
 phpMyAdmin：http://localhost:8080/  
 MailHog：http://localhost:8025/  
 
