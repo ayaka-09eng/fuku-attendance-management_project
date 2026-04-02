@@ -38,4 +38,15 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception) {
+        if ($exception instanceof \Illuminate\Auth\Access\AuthorizationException) {
+            if ($request->is('admin/*')) {
+                return redirect()->route('admin.login');
+            }
+        }
+
+        return parent::render($request, $exception);
+    }
+
 }

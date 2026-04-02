@@ -1,0 +1,142 @@
+.attendance-detail {
+    min-height: 100vh;
+    padding: 5rem 0;
+    background: #f0eff2;
+}
+
+.attendance-detail__container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.attendance-detail__title {
+    margin: 0;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.8rem;
+}
+
+.attendance-detail__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #000000;
+}
+
+.attendance-detail__inner {
+    margin: 40px 0 20px 0;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.attendance-detail__display-field {
+    display: flex;
+    align-items: center;
+    padding: 25px 45px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.attendance-detail__field-stack {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 45px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.attendance-detail__field-stack:last-child {
+    border-bottom: none;
+}
+
+.attendance-detail__row {
+    display: flex;
+    align-items: center;
+}
+
+.attendance-detail__label {
+    width: 15rem;
+    font-weight: bold;
+    font-size: 15px;
+    color: #737373;
+}
+
+.attendance-detail__inputs {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.attendance-detail__input {
+    width: 80px;
+    border: 1px solid #e1e1e1;
+    background: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+}
+
+.attendance-detail__input--display {
+    border: none;
+    background: transparent;
+}
+
+.is-pending .attendance-detail__input,
+.is-pending .attendance-detail__remarks {
+    border: none;
+    background: transparent;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.attendance-detail__tilde {
+    display: inline-block;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.attendance-detail__error {
+    margin-left: 15rem;
+    color: red;
+}
+
+.attendance-detail__remarks {
+    width: 40%;
+    padding: 8px 10px;
+    height: 70px;
+    resize: none;
+    overflow: auto;
+    border: 1px solid #e1e1e1;
+    background: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+}
+
+.attendance-detail__action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.attendance-detail__status-message {
+    margin: 0;
+    color: red;
+    font-size: 15px;
+}
+
+.attendance-detail__submit {
+    width: 120px;
+    padding: 10px 0;
+    background: #000000;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}

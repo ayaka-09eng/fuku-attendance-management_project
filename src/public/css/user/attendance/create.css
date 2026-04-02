@@ -1,0 +1,93 @@
+.attendance-registration {
+    min-height: 100vh;
+    padding: 10rem 0;
+    background: #f0eff2;
+}
+
+.attendance-registration__container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.attendance-registration__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background-color: #c8c8c8;
+    color: #696969;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.attendance-registration__datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attendance-registration__date {
+    margin: 20px 0;
+    font-size: 2.5rem;
+}
+
+.attendance-registration__time {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.attendance-registration__actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.attendance-registration__action {
+    display: block;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.attendance-registration__form {
+    margin: 0;
+}
+
+.attendance-registration__action--clock-in {
+    background: #000000;
+    color: #fff;
+}
+
+.attendance-registration__action--clock-out {
+    background: #000000;
+    color: #fff;
+}
+
+.attendance-registration__action--start-rest {
+    background: #ffffff;
+    color: #000000;
+}
+
+.attendance-registration__action--end-rest {
+    background: #ffffff;
+    color: #000000;
+}
+
+.attendance-registration__message--completed {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+}

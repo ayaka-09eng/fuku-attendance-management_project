@@ -1,0 +1,63 @@
+.admin-staff-list {
+    min-height: 100vh;
+    padding: 5rem 0;
+    background: #f0eff2;
+}
+
+.admin-staff-list__container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.admin-staff-list__title {
+    margin: 0;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.8rem;
+}
+
+.admin-staff-list__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #000000;
+}
+
+.admin-staff-list__table {
+    margin: 80px 0;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.admin-staff-list__inner {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.admin-staff-list__header {
+    padding: 10px 20px;
+    color: #737373;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+.admin-staff-list__cell {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #737373;
+}
+
+.admin-staff-list__cell:nth-child(3) a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.admin-staff-list__row:last-child td {
+    border-bottom: none;
+}

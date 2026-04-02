@@ -1,0 +1,121 @@
+.admin-request-approval {
+    min-height: 100vh;
+    padding: 5rem 0;
+    background: #f0eff2;
+}
+
+.admin-request-approval__container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.admin-request-approval__title {
+    margin: 0;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.8rem;
+}
+
+.admin-request-approval__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #000000;
+}
+
+.admin-request-approval__inner {
+    margin: 40px 0 20px 0;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.admin-request-approval__display-field,
+.admin-request-approval__field {
+    display: flex;
+    align-items: center;
+    padding: 25px 45px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.admin-request-approval__field:last-child {
+    border-bottom: none;
+}
+
+.admin-request-approval__label {
+    width: 15rem;
+    font-weight: bold;
+    font-size: 15px;
+    color: #737373;
+}
+
+.admin-request-approval__inputs {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-request-approval__input {
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    outline: none;
+    pointer-events: none;
+}
+
+.admin-request-approval__input,
+.admin-request-approval__remarks {
+    border: none;
+    background: transparent;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.admin-request-approval__tilde {
+    display: inline-block;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.admin-request-approval__remarks {
+    width: 40%;
+    padding: 8px 10px;
+    height: 70px;
+    resize: none;
+    overflow: auto;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    outline: none;
+}
+
+.admin-request-approval__action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin-request-approval__submit {
+    display: inline-block;
+    padding: 10px 40px;
+    background: #000000;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-request-approval__submit--approved {
+    background: #696969;
+    color: #ffffff;
+    cursor: default;
+    pointer-events: none;
+}

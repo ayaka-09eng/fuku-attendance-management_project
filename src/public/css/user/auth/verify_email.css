@@ -1,0 +1,54 @@
+.verify__message {
+    margin: 0;
+    padding: 10px 30px;
+    visibility: hidden;
+    min-height: 2rem;
+    border-color: #badbcc;
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.verify__message.is-visible {
+    visibility: visible;
+}
+
+.verify__wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 130px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+}
+
+.verify__text {
+    margin: 0;
+    font-weight: bold;
+}
+
+.verify__link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d9d9d9;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.verify__resend-submit {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.verify__resend-submit:hover {
+    color: #0056b3;
+}
