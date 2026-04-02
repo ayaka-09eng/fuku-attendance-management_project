@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\AttendanceCorrection;
-use App\Models\RestCorrection;
 use App\Models\AttendanceRequest;
 use App\Models\Attendance;
 use App\Models\Rest;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Http\Requests\Admin\UpdateAttendanceRequest;

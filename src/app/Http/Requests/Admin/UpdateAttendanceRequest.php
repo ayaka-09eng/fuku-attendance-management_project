@@ -98,7 +98,7 @@ class UpdateAttendanceRequest extends FormRequest
                     if ($a['start']->lt($b['end']) && $b['start']->lt($a['end'])) {
                         $validator->errors()->add(
                             "rest_corrections.{$a['index']}.requested_rest_start",
-                            '休憩時間が他の休憩時間と重複しています。'
+                            '休憩時間が他の休憩時間と重複しています'
                         );
                     }
                 }

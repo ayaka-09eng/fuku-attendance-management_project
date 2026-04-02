@@ -46,7 +46,7 @@
                         <td class="admin-attendance-list__cell">{{ $attendance->clock_end_hm ?? '' }}</td>
                         <td class="admin-attendance-list__cell">{{ $attendance->break_time_hm ?? '' }}</td>
                         <td class="admin-attendance-list__cell">{{ $attendance->actual_work_hm ?? '' }}</td>
-                        <td>
+                        <td class="admin-attendance-list__cell">
                             @if ($attendance->showDetail)
                             <a href="{{ route('admin.attendance.show', $attendance->id) }}">詳細</a>
                             @endif

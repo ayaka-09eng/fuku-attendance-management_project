@@ -73,22 +73,28 @@
 }
 
 .admin-attendance-list__header {
+    width: 15%;
     padding: 10px 40px;
     color: #737373;
     border-bottom: 2px solid #e1e1e1;
 }
 
 .admin-attendance-list__header:nth-child(1) {
-    width: 25%;
+    width: 18%;
     text-align: left;
 }
 
 .admin-attendance-list__cell {
     padding: 10px 40px;
     border-bottom: 1px solid #e1e1e1;
+    text-align: center;
     font-size: 15px;
     font-weight: bold;
     color: #737373;
+}
+
+.admin-attendance-list__cell:nth-child(1) {
+    text-align: left;
 }
 
 .admin-attendance-list__cell:nth-child(6) a {

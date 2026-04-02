@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\RestCorrection;
 use App\Models\AttendanceCorrection;
 
 class RestCorrectionFactory extends Factory

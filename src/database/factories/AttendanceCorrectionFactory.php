@@ -3,8 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\AttendanceCorrection;
-use App\Models\Attendance;
 use App\Models\AttendanceRequest;
 
 class AttendanceCorrectionFactory extends Factory
