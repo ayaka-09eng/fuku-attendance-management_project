@@ -45,30 +45,22 @@ php artisan db:seed
 srcディレクトリにあるstorageディレクトリに権限を設定  
 chmod -R 777 storage  
   
-８）シンボリックリンクを作成  
-php artisan storage:link
-  
-９）
-  
-１０）  
-  
-１１）  
-  
-１２）  
-  
-１３）  
-  
-１４）  
-  
 ```  
 
-## 管理者ユーザーおよび一般ユーザーのログイン情報
-Factoryにてユーザーを作成しているため、  
-ログインに必要なユーザー情報はphpMyAdminよりusersテーブルをご確認いただき、  
-任意のユーザーをご利用ください。  
-なお、ダミーユーザーのパスワードはすべて共通で「password」となっています。  
+## ログイン情報
+【管理者アカウント】  
+名前：Admin 001  
+メールアドレス：admin001@example.com  
+パスワード：password  
   
-※phpMyAdminのURLは以降の項目に記載あり  
+【一般ユーザーアカウント】  
+名前：User 001  
+メールアドレス：user001@example.com  
+パスワード：password  
+  
+名前：User 002  
+メールアドレス：user002@example.com  
+パスワード：password  
 
 ## テストの実施方法
 ```  
