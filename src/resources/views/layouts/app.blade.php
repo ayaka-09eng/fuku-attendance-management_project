@@ -30,6 +30,10 @@
                 <div class="header__nav-item">
                     <a class="header__action-link" href="{{ route('request.index') }}">申請</a>
                 </div>
+                <form class="header__nav-item" action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button class="header__action-link" type="submit">ログアウト</button>
+                </form>
                 @endcannot
 
                 @can('admin')
@@ -42,12 +46,11 @@
                 <div class="header__nav-item">
                     <a class="header__action-link" href="{{ route('request.index') }}">申請一覧</a>
                 </div>
-                @endcan
-
-                <form class="header__nav-item" action="{{ route('logout') }}" method="post">
+                <form class="header__nav-item" action="{{ route('logout', ['role' => 'admin']) }}" method="post">
                     @csrf
                     <button class="header__action-link" type="submit">ログアウト</button>
                 </form>
+                @endcan
             </div>
             @endif
         </div>
