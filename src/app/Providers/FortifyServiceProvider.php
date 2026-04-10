@@ -15,6 +15,9 @@ use App\Actions\Fortify\LogoutResponse;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
 use Laravel\Fortify\Contracts\LogoutResponse as LogoutResponseContract;
 use App\Models\User;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -84,6 +87,12 @@ class FortifyServiceProvider extends ServiceProvider
             }
 
             return view('user.auth.login');
+        });
+
+        RateLimiter::for('login', function (Request $request) {
+            $email = (string) $request->email;
+
+            return Limit::perMinute(10)->by($email . $request->ip());
         });
     }
 }
