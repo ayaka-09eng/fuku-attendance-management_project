@@ -78,10 +78,10 @@
                 <div class="admin-attendance-detail__field-stack">
                     <div class="admin-attendance-detail__row">
                         <label class="admin-attendance-detail__label">
-                            @if ($attendance->rests->count() === 0)
+                            @if ($rests->count() === 0)
                             休憩
                             @else
-                            休憩{{ $attendance->rests->count() + 1 }}
+                            休憩{{ $rests->count() + 1 }}
                             @endif
                         </label>
                         <div class="admin-attendance-detail__inputs">
@@ -103,7 +103,11 @@
                 <div class="admin-attendance-detail__field-stack">
                     <div class="admin-attendance-detail__row">
                         <label class="admin-attendance-detail__label">備考</label>
-                        <textarea class="admin-attendance-detail__remarks" name="note" @if ($isPending) disabled @endif>{{ old('note', $note) }}</textarea>
+                        @if ($isPending)
+                        <div class="admin-attendance-detail__remarks-view">{{ old('note', $note) }}</div>
+                        @else
+                        <textarea class="admin-attendance-detail__remarks" name="note">{{ old('note', $note) }}</textarea>
+                        @endif
                     </div>
                     <div class="admin-attendance-detail__error">
                         @error('note')

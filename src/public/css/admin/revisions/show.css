@@ -86,14 +86,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .admin-request-approval__remarks {
     width: 40%;
-    padding: 8px 10px;
-    height: 70px;
-    resize: none;
-    overflow: auto;
     font-weight: bold;
     font-size: 15px;
     color: #000000;
-    outline: none;
 }
 
 .admin-request-approval__action {

@@ -75,6 +75,7 @@
                     </div>
                 </div>
                 @endforeach
+                @if (!$isPending)
                 <div class="attendance-detail__field-stack">
                     <div class="attendance-detail__row">
                         <label class="attendance-detail__label">
@@ -85,9 +86,9 @@
                             @endif
                         </label>
                         <div class="attendance-detail__inputs">
-                            <input class="attendance-detail__input" type="time" name="rest_corrections[new][requested_rest_start]" value="{{ old('rest_corrections.new.requested_rest_start') }}" @if ($isPending) disabled @endif>
+                            <input class="attendance-detail__input" type="time" name="rest_corrections[new][requested_rest_start]" value="{{ old('rest_corrections.new.requested_rest_start') }}">
                             <span class="attendance-detail__tilde">～</span>
-                            <input class="attendance-detail__input" type="time" name="rest_corrections[new][requested_rest_end]" value="{{ old('rest_corrections.new.requested_rest_end') }}" @if ($isPending) disabled @endif>
+                            <input class="attendance-detail__input" type="time" name="rest_corrections[new][requested_rest_end]" value="{{ old('rest_corrections.new.requested_rest_end') }}">
                         </div>
                     </div>
                     <div class="attendance-detail__error">
@@ -100,10 +101,15 @@
                         @endif
                     </div>
                 </div>
+                @endif
                 <div class="attendance-detail__field-stack">
                     <div class="attendance-detail__row">
                         <label class="attendance-detail__label">備考</label>
-                        <textarea class="attendance-detail__remarks" name="note" @if ($isPending) disabled @endif>{{ old('note', $note) }}</textarea>
+                        @if ($isPending)
+                        <div class="attendance-detail__remarks-view">{{ old('note', $note) }}</div>
+                        @else
+                        <textarea class="attendance-detail__remarks" name="note">{{ old('note', $note) }}</textarea>
+                        @endif
                     </div>
                     <div class="attendance-detail__error">
                         @error('note')

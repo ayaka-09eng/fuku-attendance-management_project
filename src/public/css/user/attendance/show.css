@@ -105,6 +105,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: red;
 }
 
+.attendance-detail__remarks-view {
+    width: 40%;
+    background: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+}
+
 .attendance-detail__remarks {
     width: 40%;
     padding: 8px 10px;

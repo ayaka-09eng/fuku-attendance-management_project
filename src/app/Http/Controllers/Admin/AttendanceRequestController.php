@@ -65,46 +65,33 @@ class AttendanceRequestController extends Controller
     }
 
     public function approveForm($attendance_correct_request_id) {
-        $request = AttendanceRequest::with(['user', 'attendance', 'attendanceCorrection'])->findOrFail($attendance_correct_request_id);
+        $request = AttendanceRequest::with(['user', 'attendance', 'attendanceCorrection.restCorrections'])->findOrFail($attendance_correct_request_id);
 
         return view('admin.revisions.show', compact('request'));
     }
 
-    public function approve(Request $request, $attendance_correct_request_id) {
-        DB::transaction(function () use ($request, $attendance_correct_request_id) {
-            $attendanceRequest = AttendanceRequest::with('attendance.rests')->findOrFail($attendance_correct_request_id);
+    public function approve($attendance_correct_request_id) {
+        DB::transaction(function () use ($attendance_correct_request_id) {
+            $attendanceRequest = AttendanceRequest::with('attendance.rests', 'attendanceCorrection.restCorrections')->findOrFail($attendance_correct_request_id);
             $attendance = $attendanceRequest->attendance;
-            $workDate = $attendance->work_date->format('Y-m-d');
-
-            $requestedClockStart = $request->requested_clock_start ? Carbon::parse($workDate . ' ' . $request->requested_clock_start . ':00') : null;
-
-            $requestedClockEnd = $request->requested_clock_end ? Carbon::parse($workDate . ' ' . $request->requested_clock_end . ':00') : null;
+            $attendanceCorrection = $attendanceRequest->attendanceCorrection;
+            $restCorrections = $attendanceCorrection->restCorrections;
 
             $attendanceRequest->update([
                 'approval_status' => AttendanceRequest::STATUS_APPROVED,
             ]);
 
             $attendance->update([
-                'clock_start' => $requestedClockStart,
-                'clock_end' => $requestedClockEnd,
+                'clock_start' => $attendanceCorrection->requested_clock_start,
+                'clock_end' => $attendanceCorrection->requested_clock_end,
             ]);
 
             $attendance->rests()->delete();
 
-            foreach ($request->input('rest_corrections', []) as $restCorrection) {
-                if (empty($restCorrection['requested_rest_start']) &&
-                    empty($restCorrection['requested_rest_end'])) {
-                    continue;
-                }
-
-                $requestedRestStart = $restCorrection['requested_rest_start'] ? Carbon::parse($workDate . ' ' . $restCorrection['requested_rest_start'] . ':00') : null;
-
-                $requestedRestEnd = $restCorrection['requested_rest_end'] ? Carbon::parse($workDate . ' ' . $restCorrection['requested_rest_end'] . ':00') : null;
-
-                Rest::create([
-                    'attendance_id' => $attendance->id,
-                    'rest_start' => $requestedRestStart,
-                    'rest_end' => $requestedRestEnd,
+            foreach ($restCorrections as $restCorrection) {
+                $attendance->rests()->create([
+                    'rest_start' => $restCorrection->requested_rest_start,
+                    'rest_end' => $restCorrection->requested_rest_end,
                 ]);
             }
         });
