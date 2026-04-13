@@ -61,7 +61,7 @@
                         <div class="attendance-detail__inputs">
                             <input class="attendance-detail__input" type="time" name="rest_corrections[{{ $index }}][requested_rest_start]" value="{{ old("rest_corrections.$index.requested_rest_start", $rest->rest_start_hm) }}" @if ($isPending) disabled @endif>
                             <span class="attendance-detail__tilde">～</span>
-                            <input class=" attendance-detail__input" type="time" name="rest_corrections[{{ $index }}][requested_rest_end]" value="{{ old("rest_corrections.$index.requested_rest_end", $rest->rest_end_hm) }}" @if ($isPending) disabled @endif>
+                            <input class="attendance-detail__input" type="time" name="rest_corrections[{{ $index }}][requested_rest_end]" value="{{ old("rest_corrections.$index.requested_rest_end", $rest->rest_end_hm) }}" @if ($isPending) disabled @endif>
                         </div>
                     </div>
                     <div class="attendance-detail__error">

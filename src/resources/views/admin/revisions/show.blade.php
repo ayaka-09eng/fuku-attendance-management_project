@@ -26,9 +26,9 @@
             <div class="admin-request-approval__field">
                 <label class="admin-request-approval__label">出勤・退勤</label>
                 <div class="admin-request-approval__inputs">
-                    <input class="admin-request-approval__input" type="time" name="requested_clock_start" value="{{ old('requested_clock_start', $request->attendanceCorrection->clock_start_hm) }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old('requested_clock_start', $request->attendanceCorrection->clock_start_hm) }}" readonly>
                     <span class="admin-request-approval__tilde">～</span>
-                    <input class="admin-request-approval__input" type="time" name="requested_clock_end" value="{{ old('requested_clock_end', $request->attendanceCorrection->clock_end_hm) }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old('requested_clock_end', $request->attendanceCorrection->clock_end_hm) }}" readonly>
                 </div>
             </div>
             @foreach ($request->attendanceCorrection->restCorrections as $index => $rest)
@@ -41,9 +41,9 @@
                     @endif
                 </label>
                 <div class="admin-request-approval__inputs">
-                    <input class="admin-request-approval__input" type="time" name="rest_corrections[{{ $index }}][requested_rest_start]" value="{{ old("rest_corrections.$index.requested_rest_start", $rest->rest_start_hm) }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old("rest_corrections.$index.requested_rest_start", $rest->rest_start_hm) }}" readonly>
                     <span class="admin-request-approval__tilde">～</span>
-                    <input class="admin-request-approval__input" type="time" name="rest_corrections[{{ $index }}][requested_rest_end]" value="{{ old("rest_corrections.$index.requested_rest_end", $rest->rest_end_hm) }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old("rest_corrections.$index.requested_rest_end", $rest->rest_end_hm) }}" readonly>
                 </div>
             </div>
             @endforeach
@@ -56,9 +56,9 @@
                     @endif
                 </label>
                 <div class="admin-request-approval__inputs">
-                    <input class="admin-request-approval__input" type="time" name="rest_corrections[new][requested_rest_start]" value="{{ old('rest_corrections.new.requested_rest_start') }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old('rest_corrections.new.requested_rest_start') }}" readonly>
                     <span class="admin-request-approval__tilde">～</span>
-                    <input class="admin-request-approval__input" type="time" name="rest_corrections[new][requested_rest_end]" value="{{ old('rest_corrections.new.requested_rest_end') }}" readonly>
+                    <input class="admin-request-approval__input" type="time" value="{{ old('rest_corrections.new.requested_rest_end') }}" readonly>
                 </div>
             </div>
             <div class="admin-request-approval__field">
